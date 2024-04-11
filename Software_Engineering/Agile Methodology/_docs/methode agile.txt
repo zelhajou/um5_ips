@@ -1,0 +1,100 @@
+Methode scrum : 
+3 acteurs principaux
+
+prodact owner
+
+scrum master : chef de projet
+
+équipe de dev
+
+
+
+Scrum ne dit pas comment réussir son logiciel, comment surmonter les obstacles, comment développer, comment spécifier, etc. 
+Il se contente d’offrir un cadre de gestion de projet Agile: des rôles, un rythme itératif, des réunions précises et limitées dans le temps, 
+des artefacts (product backlog, sprint backlog, graphique d’avancement) et des règles du jeu.
+
+- théqnique moscow
+
+
+ESTIMATION :
+hiy 1jour * 1 home 
+
+estimation hiya = 1*1 = 1
+
+
+Methode agile vs waterfall 
+
+
+waterfall : 
+
+ui -> dev front -> dev back -> test -> deploy 
+
+had chi kaykhed lwe9t hit kola wa7d kaytsna lakher bach ytsala 
+
+agile: 
+kan9smo lprojet kamel sous livraison 
+
+
+methode scrum :
+
+framework 
+
+keys elemnts : 
+
+developers + project manager + directeur + prodact owner
+
+- prodact owner : hwa moul lprojet
+- scrum master : simplifiaction ou hwa lwasit mabin dev ou client
+- scrum team : developers
+- (stakeholders)
+
+Meetings 
+planing meeting : awel meetings ( kaykon fih scrum master + product owner ) 
+standup meeting or daily scrum meeting (15 min) :
+kola sba7 kaykono questions: 
+
+1- what did i do yesterday ?
+2- what will i do today? 
+3 - whats in my way ?
+ 
+************************
+1- product owner ka tkon 3endo fikra baghi y7etha (web app)
+2- had lfikra khas nfhemha ou n9smoha l des tache
+
+besoin :
+
+Porduct backlog (Users story):
+
+had les tasks ka ytjm3o f product backlog (ay haja bghaha lclient ka n7toha ) ou ka nktboha 3la chkel users stories
+had users stories ka nktbohom b wa7d tari9a machi tech katkteb b tari9a simple (human)	 
+	example :
+As <type of user> , I want to <perform some task> , so that i can <achieve some goal>
+
+hna kayji khas nbdaw projet men  ba3d ma fhemna mn client chno bgha 
+
+sprint backlog : 
+ida kant lapp kbira ka n9smoh l sprints (authontification - login ) ou kandiro liha livraison
+
+kanhso hadok tasks mn backlog ou kan9ado sprint dyalna
+nb : sprint ma kayfotch 4weeks ou max dyal sories hwa 8 ola 9
+
+ida cheft had chi kayakhed lik we9t kbir kayna wa7d l7aja :
+ghadi twli dik user storie  l (EPIC)
+
+
+hna fin ghadi yjiw scrum team li hom developers ou kan3tihom kola wa7d sprint li ykhdem 3liha
+
+in progress : 
+hna f lw9ita li katbda lkhedma 3la dik sprint kadoz l in progress
+
+sprint QC :
+
+hna fin ka tsali dik sprint ou kadoz t validiha m3a client
+
+sprint 1 - complete 
+hna fach ka nvalidiw m3a lclient ou kaykon kolchi mezyan
+
+
+user story point (difination complixti fiboncci)
+
+
