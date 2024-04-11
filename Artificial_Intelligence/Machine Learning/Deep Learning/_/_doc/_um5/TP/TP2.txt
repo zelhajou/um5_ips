@@ -1,0 +1,5 @@
+Ci-joint le cours et le notebook. Voici le lien vers le jeu de données pour le TP2 : https://www.kaggle.com/datasets/pranavraikokte/covid19-image-dataset
+
+Vous allez utiliser le jeu de données pour classifier les images en trois catégories : covid-19, normal, et pneumonie virale. Cette tâche de classification d'images est similaire à ce que nous avons fait dans le cours, sauf qu'elle contient 3 classes et l'exemple dans le cours était 2 classes, donc vous devez utiliser des fonctions d'activation pour la dernière couche et de perte adaptées à ce problème.
+
+TP2 à rendre avant le 27 novembre.
