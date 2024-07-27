@@ -69,3 +69,26 @@ VMware vSphere est une solution de virtualisation populaire comprenant :
 5. **Technologies Clés**: VMware vSphere et ses composants principaux pour la gestion des environnements virtuels.
 
 En conclusion, la virtualisation transforme la gestion des systèmes informatiques, offrant des solutions flexibles et efficaces pour répondre aux besoins changeants des entreprises modernes.
+
+## [02-Cours virtualisation-MasterIPS-2022-2023-Seance_02](https://github.com/zelhajou/um5r-master_IPS/blob/main/Virtualization/docs/Cours/02-Cours%20virtualisation-MasterIPS-2022-2023-Seance_02.pdf)
+
+### Introduction à la Virtualisation
+La virtualisation est un ensemble de techniques matérielles et logicielles qui permettent d’exécuter plusieurs systèmes d’exploitation (OS) et applications sur une seule machine physique. Elle repose sur l’utilisation de machines virtuelles (VM) qui fonctionnent comme des ordinateurs physiques, grâce à un hyperviseur.
+
+**Terminologie**
+
+1. **Hyperviseur (Hypervisor)**: Il en existe deux types :
+
+	- **Bare-metal (Type 1)**: Directement sur le matériel physique.
+	- **Hosted (Type 2)**: Sur un OS existant. 
+2. **Hôte (Host)**: La machine physique exécutant l’hyperviseur, dotée de multiples processeurs multicœurs, de plusieurs gigaoctets de RAM et de téraoctets d’espace disque, souvent avec un stockage en réseau (NAS ou SAN).
+3. **Système Invité (Guest)**: OS installé à l’intérieur d’une machine virtuelle.
+4. **Machine Virtuelle (VM)**: Système d’exploitation exécuté à l’aide d’un hyperviseur, avec du matériel partiellement ou totalement émulé.
+5. **Migration Live (Vmotion)**: Déplacement d’un invité d’un hôte à un autre sans interruption de service.
+
+**Candidats à la Virtualisation**
+
+Les serveurs de bases de données (Oracle, MySQL), les serveurs d’applications (WebSphere, WebLogic, Tomcat) et les serveurs réseau (DNS, DHCP, NTP) sont souvent virtualisés. Il n’y a pas de restriction quant aux systèmes d’exploitation utilisés (Windows, Linux, Solaris, etc.).
+
+
+
