@@ -20,6 +20,10 @@ Le dépôt est structuré comme suit:
   - [Objectifs du Master](#objectifs-du-master)
   - [Contenu de la formation](#contenu-de-la-formation)
 - [Compétences Acquises](#compétences-acquises)
+- [Projets](#projets)
+- [Mémoire](#mémoire)
+- [Outils et Technologies Utilisés](#outils-et-technologies-utilisés)
+- [Contact](#contact)
 
 ## A propos de l'Université Mohammed V de Rabat
 La Faculté des Sciences de Rabat, partie intégrante de l'Université Mohammed V de Rabat, offre une gamme variée de programmes académiques en sciences et abrite plusieurs laboratoires de recherche. Elle est dédiée à l'excellence académique et à la recherche scientifique, formant des étudiants dans divers domaines scientifiques, y compris l'informatique, la physique, la chimie, et les sciences de la vie.
