@@ -9,10 +9,8 @@ Le dépôt est structuré comme suit:
 - `cours/`: contient les cours suivis au cours du Master.
 - `projets/`: contient les projets réalisés dans le cadre du Master.
 - `memoire/`: contient le mémoire de fin d'études.
-
-<!--
 - `rapports/`: contient les rapports de stage.
--->
+
 ## Plan
 - [A propos de l'Université Mohammed V de Rabat](#a-propos-de-luniversité-mohammed-v-de-rabat)
 - [A propos du Département d'Informatique](#a-propos-du-département-dinformatique)
