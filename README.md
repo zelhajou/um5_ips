@@ -154,6 +154,7 @@ Les outils et technologies utilisés au cours du Master sont les suivants:
 ## Contact Information
 Pour toute question ou collaboration, vous pouvez me contacter via zelhajou@gmail.com.
 
+<!--
 ## Future Plans
 Je prévois de continuer à explorer les domaines du machine learning, du cloud computing, et de l'intelligence artificielle. J'ai également l'intention de travailler sur des projets open source et de contribuer à la communauté scientifique.
 
@@ -163,7 +164,6 @@ Je tiens à remercier mes professeurs, mentors, et collègues pour leur soutien 
 ## Personal Reflections
 Ce programme de Master a été une expérience incroyablement enrichissante. Les défis rencontrés m'ont permis de grandir en tant que professionnel et en tant qu'individu. Je suis reconnaissant pour les opportunités d'apprentissage et de développement qui m'ont été offertes.
 
-
-
-<!-- ## Contact
-Pour toute information supplémentaire, n'hésitez pas à me contacter à l'adresse suivante: zelhajou@gmail.com. -->
+## Contact
+Pour toute information supplémentaire, n'hésitez pas à me contacter à l'adresse suivante: zelhajou@gmail.com.
+-->
