@@ -103,7 +103,7 @@ Le mémoire de fin d'études est disponible [ici](#).
 
 Les outils et technologies utilisés au cours du Master sont les suivants:
 
-[![My Skills](https://skillicons.dev/icons?i=python,tensorflow,scikitlearn,mysql,mongo,pycharm,vscode,gcp,aws,git,linux,windows,docker)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=python,tensorflow,scikitlearn,mysql,mongo,pycharm,vscode,latex,gcp,aws,git,linux,windows,docker)](https://skillicons.dev)
 
 
 **Langages de Programmation:**
