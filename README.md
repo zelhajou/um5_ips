@@ -119,16 +119,16 @@ Les outils et technologies utilisés au cours du Master sont les suivants:
 - **MongoDB**: Utilisé pour les bases de données NoSQL, particulièrement pour les projets nécessitant une flexibilité de schéma.
 - **Oracle**: Utilisé dans les projets nécessitant des bases de données robustes et scalables.
 
-- **Environnements de Développement Intégré (IDE)**
+**Environnements de Développement Intégré (IDE)**
 - **Jupyter Notebook**: Utilisé pour l'analyse de données, la visualisation, et l'expérimentation avec les modèles de Machine Learning et de Deep Learning.
 - **PyCharm**: Utilisé pour le développement de projets Python de grande envergure.
 - **Visual Studio Code**: Utilisé pour le développement de projets Web et pour l'écriture de scripts Python.
 
-- **Outils de Cloud Computing**
+**Outils de Cloud Computing**
 - **Google Cloud Platform (GCP)**: Utilisé pour l'entraînement de modèles de Deep Learning sur des machines virtuelles de haute performance.
 - **Amazon Web Services (AWS)**: Utilisé pour le déploiement de modèles de Machine Learning et de Deep Learning en production.
 
-- **Outils de Gestion de Versions**
+**Outils de Gestion de Versions**
 - **Git**: Utilisé pour la gestion des versions du code source et la collaboration avec d'autres développeurs.
 
 **Outils de Visualisation de Données**
