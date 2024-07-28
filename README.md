@@ -23,7 +23,10 @@ Le dépôt est structuré comme suit:
 - [Projets](#projets)
 - [Mémoire](#mémoire)
 - [Outils et Technologies Utilisés](#outils-et-technologies-utilisés)
-- [Contact](#contact)
+- [Contact Information](#contact-information)
+- [Future Plans](#future-plans)
+- [Acknowledgments](#acknowledgments)
+- [Personal Reflections](#personal-reflections)
 
 ## A propos de l'Université Mohammed V de Rabat
 La Faculté des Sciences de Rabat, partie intégrante de l'Université Mohammed V de Rabat, offre une gamme variée de programmes académiques en sciences et abrite plusieurs laboratoires de recherche. Elle est dédiée à l'excellence académique et à la recherche scientifique, formant des étudiants dans divers domaines scientifiques, y compris l'informatique, la physique, la chimie, et les sciences de la vie.
@@ -104,5 +107,60 @@ Les outils et technologies utilisés au cours du Master sont les suivants:
 
 **Frameworks et Bibliothèques:**
 
-## Contact
-Pour toute information supplémentaire, n'hésitez pas à me contacter à l'adresse suivante: zelhajou@gmail.com.
+- **TensorFlow**: Utilisé pour les projets de Deep Learning, notamment dans le cadre de la reconnaissance d'images et du traitement du langage naturel.
+- **Scikit-learn**: Principalement utilisé pour les projets de Machine Learning.
+- **Keras**: Framework de haut niveau pour le Deep Learning, utilisé en conjonction avec TensorFlow.
+- **Pandas**: Utilisé pour la manipulation et l'analyse des données.
+- **NumPy**: Utilisé pour les calculs scientifiques et les opérations sur les matrices.
+
+**Bases de Données:**
+
+- **MySQL**: Utilisé pour la gestion des bases de données relationnelles.
+- **MongoDB**: Utilisé pour les bases de données NoSQL, particulièrement pour les projets nécessitant une flexibilité de schéma.
+- **Oracle**: Utilisé dans les projets nécessitant des bases de données robustes et scalables.
+
+- **Environnements de Développement Intégré (IDE)**
+- **Jupyter Notebook**: Utilisé pour l'analyse de données, la visualisation, et l'expérimentation avec les modèles de Machine Learning et de Deep Learning.
+- **PyCharm**: Utilisé pour le développement de projets Python de grande envergure.
+- **Visual Studio Code**: Utilisé pour le développement de projets Web et pour l'écriture de scripts Python.
+
+- **Outils de Cloud Computing**
+- **Google Cloud Platform (GCP)**: Utilisé pour l'entraînement de modèles de Deep Learning sur des machines virtuelles de haute performance.
+- **Amazon Web Services (AWS)**: Utilisé pour le déploiement de modèles de Machine Learning et de Deep Learning en production.
+
+- **Outils de Gestion de Versions**
+- **Git**: Utilisé pour la gestion des versions du code source et la collaboration avec d'autres développeurs.
+
+**Outils de Visualisation de Données**
+- **Matplotlib**: Utilisé pour la visualisation des données en Python.
+- **Seaborn**: Utilisé pour des visualisations statistiques plus avancées
+- **Plotly**: Utilisé pour la visualisation interactive de données.
+- **Tableau**: Utilisé pour la création de dashboards interactifs et la visualisation des données.s.
+
+**Systèmes d'Exploitation**
+- **Linux**: Utilisé comme système d'exploitation principal pour le développement de projets de Machine Learning et de Deep Learning.
+- **Windows**: Utilisé pour le développement de projets Web et pour l'utilisation de logiciels spécifiques à Windows.
+
+<!-- **Autres Outils**
+- **Docker**: Utilisé pour la conteneurisation des applications et la gestion des environnements de développement.
+- **Kubernetes**: Utilisé pour l'orchestration des conteneurs et le déploiement d'applications à grande échelle.
+- **Apache Kafka**: Utilisé pour la gestion des flux de données en temps réel.
+- **Apache Spark**: Utilisé pour le traitement des données massives et la mise en œuvre de pipelines de données.
+ -->
+
+## Contact Information
+Pour toute question ou collaboration, vous pouvez me contacter via zelhajou@gmail.com.
+
+## Future Plans
+Je prévois de continuer à explorer les domaines du machine learning, du cloud computing, et de l'intelligence artificielle. J'ai également l'intention de travailler sur des projets open source et de contribuer à la communauté scientifique.
+
+## Acknowledgments
+Je tiens à remercier mes professeurs, mentors, et collègues pour leur soutien et leurs conseils tout au long de ce programme. Un grand merci également à ma famille et à mes amis pour leur encouragement inconditionnel.
+
+## Personal Reflections
+Ce programme de Master a été une expérience incroyablement enrichissante. Les défis rencontrés m'ont permis de grandir en tant que professionnel et en tant qu'individu. Je suis reconnaissant pour les opportunités d'apprentissage et de développement qui m'ont été offertes.
+
+
+
+<!-- ## Contact
+Pour toute information supplémentaire, n'hésitez pas à me contacter à l'adresse suivante: zelhajou@gmail.com. -->
