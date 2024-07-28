@@ -101,6 +101,9 @@ Le mémoire de fin d'études est disponible [ici](#).
 
 Les outils et technologies utilisés au cours du Master sont les suivants:
 
+[![My Skills](https://skillicons.dev/icons?i=python,tensorflow,scikitlearn,mysql,mongo,pycharm,vscode,gcp,aws,git,linux,windows,docker)](https://skillicons.dev)
+
+
 **Langages de Programmation:**
 - **Python:** Utilisé pour la plupart des projets de Data Science, Machine Learning, et Deep Learning.
 - **SQL:** Employé pour la gestion et l'interrogation des bases de données relationnelles.
