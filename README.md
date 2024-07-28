@@ -53,25 +53,27 @@ Le Master en Traitement Intelligent des Systèmes est un programme spécialisé 
 ### Contenu de la formation
 
 **S1:**
-- **M1: Data Mining & Machine Learning**
-- **M2: Bases de Données Avancées (Oracle)**
-- **M3: Web Sémantique & XML**
-- **M4: Intelligence Artificielle**
-- **M5: Coaching et Techniques de Motivation**
-- **M6: Développement d'Applications Open Source**
+- **M1**: Data Mining & Machine Learning
+- **M2**: Bases de Données Avancées (Oracle)
+- **M3**: Web Sémantique & XML
+- **M4**: Intelligence Artificielle
+- **M5**: Coaching et Techniques de Motivation
+- **M6**: Développement d'Applications Open Source
 
 **S2**:
-- **M7: Sécurité Informatique**
-- **M8: Vision par Ordinateur**
-- **M9: Optimisation des Systèmes**
-- **M10: Ingénierie Logicielle**
-- **M11: Management & Entrepreneuriat**
+- **M7**: Sécurité Informatique
+- **M8**: Vision par Ordinateur
+- **M9**: Optimisation des Systèmes
+- **M10**: Ingénierie Logicielle
+- **M11**: Management & Entrepreneuriat
 
 **S3**:
-- **Sécurité Informatique Project**
-- **Vision par Ordinateur Project**
-- **Optimisation des Systèmes Project**
-- **Ingénierie Logicielle Project**
+- **M12**: Big Data & Data Science
+- **M13**: Reporting & ERP
+- **M14**: Mobile Cloud Computing & VNF
+- **M15**: IoT & Mobile Edge Computing (5G)
+- **M16**: Systèmes Intelligents & Deep Learning
+- **M17**: Management Stratégique
 
 **S4**:
 - **Stage et mémoire**
