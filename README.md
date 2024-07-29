@@ -4,12 +4,16 @@
 ## Introduction
 Ce dépôt est dédié au Master en Traitement Intelligent des Systèmes de [l'Université Mohammed V de Rabat](http://www.um5.ac.ma/um5/). Il contient l'intégralité de mon parcours académique, les compétences acquises, ainsi que toutes les découvertes faites au cours de ce programme de Master.
 
-## Contenu
+## Contenu du Dépôt
 Le dépôt est structuré comme suit:
 - `cours/`: contient les cours suivis au cours du Master.
 - `projets/`: contient les projets réalisés dans le cadre du Master.
+- `ressources/`: contient des ressources supplémentaires, telles que des articles, des tutoriels, et des livres.
+- `outils/`: contient des outils et des logiciels utilisés au cours du Master.
 - `memoire/`: contient le mémoire de fin d'études.
 - `rapports/`: contient les rapports de stage.
+- `images/`: contient des images et des captures d'écran.
+
 
 ## Plan
 - [A propos de l'Université Mohammed V de Rabat](#a-propos-de-luniversité-mohammed-v-de-rabat)
