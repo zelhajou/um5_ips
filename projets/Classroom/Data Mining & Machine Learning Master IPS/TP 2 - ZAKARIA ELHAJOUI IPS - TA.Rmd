@@ -1,0 +1,558 @@
+---
+title: "TP 2 : Analyse univariée et bivariée avec $R$"
+author: "Zakaria ELhajoui"
+date: "1 May 2022"
+output:
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+    number_sections: yes
+  word_document:
+    toc: yes
+    toc_depth: '3'
+    number_sections: yes
+  html_document:
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+    code_folding: show
+    number_sections: yes
+---
+\newpage
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rm(list = ls())
+
+colorier <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", color,
+      x)
+  } else x
+}
+
+centrer <- function(x) {
+  if (knitr::is_latex_output()){ 
+    sprintf("\\begin{center}\\textbf{%s}\\end{center}", x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<center><bold>%s</bold></center>",x)
+  } else x
+}
+```
+# Introduction à l'énoncé du problème :
+
+Une banque veut s’occuper de la fidélisation des clients pour son produit, les comptes d’épargne. La banque
+souhaite que vous identifiiez les clients susceptibles d’abandonner les soldes inférieurs au solde minimum.
+Vous disposez des informations sur les clients telles que l’âge, le sexe, les données démographiques et leurs
+transactions avec la banque. Votre tâche en tant que scientifique des données serait de prédire la probabilité
+de résiliation pour chaque client.
+
+
+
+# Objectifs :
+
+Les objectifs fixés sont :
+
+* Faire de l’analyse univariée avec le langage R
+* Faire de l’analyse bivariée avec le langage R
+
+
+# Génération des hypothèses du problème
+
+La génération d’hypothèses consiste à préparer une liste exhaustive de questions ou de possibilités qui affectent directement ou indirectement l’énoncé du problème ou la variable cible. Il s’agit d’une étape très importante, car elle nous évite de se lancer dans une course folle pendant l’analyse exploratoire des données. Elle réduit ce processus aux aspects les plus essentiels.
+
+Pour générer les hypothèses, on a besoin des éléments suivants :
+
+* Du bon sens ou de la rationalité
+* Connaissance du domaine si possible
+* Communication avec des experts du domaine
+  
+Ci-dessous les hypothèses avec lesquelles on travaillera cette analyse exploratoire des données.
+
+Sur la base des données démographiques :
+
+1. Les femmes sont-elles moins susceptibles de résilier que les hommes ?
+2. Les jeunes clients sont-ils plus susceptibles de se désabonner ?
+3. Les clients à faible revenu sont-ils plus susceptibles de se désabonner ?
+4. Les clients ayant une ou plusieurs personnes à charge sont-ils moins susceptibles de résilier ?
+5. Les clients dont la taille moyenne de la famille est inférieure à 4 sont plus susceptibles de résilier ?
+
+
+Sur la base du comportement des clients :
+
+1. Les clients vintage sont-ils moins susceptibles de se désabonner ?
+2. Les clients dont le solde moyen est plus élevé sont-ils moins susceptibles de se désabonner ?
+3. Les clients dont le solde mensuel diminue sont-ils plus susceptibles de se désabonner ?
+4. Les clients n’ayant effectué aucune transaction au cours des trois derniers mois sont-ils plus susceptibles de se désabonner ?
+5. Les clients ayant effectué des retraits importants au cours du dernier mois ont-ils plus de chances de se désabonner ?
+6. Les clients ayant effectué des retraits importants au cours du dernier trimestre sont-ils plus susceptibles de se désabonner ?
+7. Les clients qui ne se sont pas engagés avec la banque au cours du dernier trimestre sont-ils plus susceptibles de se désabonner ?
+
+# Description du Dataset
+
+Le fichier joint “Banking_churn_prediction.csv” contient notre dataset. Il est composé de multiples
+variables qui peuvent être divisées en trois catégories :
+
+Informations démographiques sur le client:
+
+Variable | Description
+------------- | -------------
+customer_id | Identifiant du client
+vintage | Ancienneté du client auprès de la banque en nombre de jour
+age | Age du client
+gender | Sexe du client
+dependents | Nombre de personne à charge
+occupation |  Profession du client 
+city |  Ville du client (anonymisée)
+
+Informations bancaires des clients :
+
+Variable | Description
+------------- | -------------
+customer_nw_category |  Valeur nette du client (3:faible 2:moyenne 1:élevée)
+branch_code | Code de la branche pour le compte du client
+days_since_last_transaction | Nombre de jours depuis le dernier crédit au cours de la dernière année
+
+Informations bancaires des clients :
+
+Variable | Description
+------------- | -------------
+current_balance |  Solde à ce jour
+previous_month_end_balance |  Solde à la fin du mois précédent
+average_monthly_balance_prevQ | Soldes mensuels moyens (AMB) au trimestre précédent
+average_monthly_balance_prevQ2 | Soldes mensuels moyens (AMB) à l’avant dernier trimestre
+percent_change_credits | Variation en pourcentage des crédits entre les deux derniers trimestres
+current_month_credit |  Montant total du crédit du mois en cours
+previous_month_credit |  Montant total du crédit du mois précédent
+current_month_debit |  Montant total du débit du mois en cours
+previous_month_debit |  Montant total du débit du mois précédent
+current_month_balance | Solde moyen du mois en cours
+previous_month_balance | Solde moyen du mois précédent
+churn | Le solde moyen du client devient inférieur au solde minimum au cours du trimestre suivant (1/0).
+
+# Lecture de fichiers en R :
+
+```{r}
+#import data
+
+data <- read.csv("Banking_churn_prediction.csv", header=TRUE, stringsAsFactors=FALSE)
+
+```
+
+## Structure d'un dataframe :
+
+
+```{r}
+# Checking the dimensions of a data frame
+dim(data)
+
+```
+
+```{r}
+# Returning the column names
+colnames(data)
+
+```
+
+
+```{r}
+# Viewing a summary of the data
+summary(data)
+
+```
+
+```{r}
+# Viewing the structure of the data
+str(data)
+
+```
+
+## Accéder aux variables d’un dataframe
+
+```{r}
+# Returning the values of a data frame component
+
+# data$gender
+
+# Returning only first or last values
+
+head(x = data$age)
+
+# Returning a component of the data frame
+
+# data['gender']
+
+
+```
+
+## Subsetting
+
+```{r}
+data2 <- read.csv("Banking_churn_prediction.csv")
+
+fl = subset(data2, gender == "Male")
+
+# With dplyr's filter function:
+
+# install.packages('dplyr')
+
+# With dplyr's filter function:
+
+library(stats)
+library(dplyr)
+# f2 = filter(data2, gender == "Male")
+
+
+
+```
+
+## Ajout et suppression d’une variable dans un dataframe
+
+```{r}
+# Removing NA values
+d = data.frame(data2)
+## d[complete.cases(d), ]
+
+# Adding a new column
+data$next_age
+# data$next_age = age + 1 
+```
+
+## Grouping Operations
+
+```{r}
+# Applying summarize to groups of observations
+
+# by_gender = group_by()
+```
+
+
+# Identification des variables et typage
+
+```{r}
+# A closer look at the data types present in the data
+str(data)
+
+```
+
+Il y a beaucoup de variables visibles en même temps, alors réduisons cela en regardant un type de données à la fois. Nous allons commencer par int
+
+```{r}
+data_intger <- select_if(data, is.integer) # Subset integer columns with dplyr
+
+fd = sapply(data_intger, class)# Print subset to RStudio console
+
+fd
+
+```
+
+```{r}
+
+data$dependents <- as.integer(data$dependents) #"dependents" devrait être un nombre entier. Devrait être convertie en type entier
+
+
+data$last_transaction <- as.Date(data$last_transaction, "%Y-%m-%d") #la colonne 'last_transaction' doit être convertie en Date
+
+
+
+data$jour_de_l_annee <- strftime(data$last_transaction, format = "%j")
+data$mois_de_l_annee <- strftime(data$last_transaction, format = "%m")
+data$jour_du_mois <- strftime(data$last_transaction, format = "%d")
+data$jour_de_la_s0emaine <- strftime(data$last_transaction, format = "%w")
+data$semaine_de_l_annee <- strftime(data$last_transaction, format = "%V")
+
+data$jour_de_l_annee <- as.integer(data$jour_de_l_annee)
+data$mois_de_l_annee <- as.integer(data$mois_de_l_annee)
+data$jour_du_mois <- as.integer(data$jour_du_mois)
+data$jour_de_la_semaine <- as.integer(data$jour_de_la_s0emaine)
+data$semaine_de_l_annee <- as.integer(data$semaine_de_l_annee)
+
+data <- within(data, rm(last_transaction))
+str(data)
+
+```
+
+
+
+# Analyse univariée
+
+repose sur l'analyse des variables (les colonnes) dont, les méthodes et fonctions utilisées seront différentes selon qu'il s'agit d'une variable quantitative (variable numérique pouvant prendre un grand nombre de valeurs) ou d'une variable qualitative (variable pouvant prendre un nombre limité de valeurs appelées modalités : situation familiale par exemple) \### Analyse d'une variable quantitative Une variable quantitative est une variable de type numérique (un nombre) qui peut prendre un grand nombre de valeurs. En effet, On en a plusieurs dans notre jeu de données, notamment l'âge, vintage, current_balance ou le current_month_balance ... ####Représentation graphique ***Age***
+
+## Analyse d’une variable quantitative
+
+Une variable quantitative est une variable de type numérique (un nombre) qui peut prendre un 
+grand nombre de valeurs.
+La description d’une variable quantitative se base sur les statistiques suivantes : la moyenne, la médiane, la variance, l’écart-type, les quantiles. On peut aller plus loin en regardant l’asymétrie et l’aplatissement.
+On différencie deux types de variables :
+- les variables quantitatives
+- les variables qualitatives
+
+## Représentation graphique
+
+```{r}
+
+db_banque = tibble::as_tibble(data) # Transformation to a tibble
+head(db_banque)
+
+
+library(tidyr)
+db_banque <- drop_na(db_banque) # DELETE NA
+head(db_banque) 
+
+hist(table(db_banque$age),col = "#009999",
+main = "Répartition des ages des clients ",
+xlab = "Age",
+ylab = "Effectif")
+
+```
+
+
+```{r}
+# The seniority of customers in number of days (Vintage)
+
+hist(table(db_banque$vintage),col = "#005599",
+main = "Ancienneté en nombre de jours des clients ",
+xlab = "Ancienneté en nombre de Jours",
+ylab = "Effectif")
+
+```
+```{r}
+## Customer Revenue (customer_nw_category)
+
+barplot(height = table(db_banque$customer_nw_category), main = 'Client Revenue Classification', las= 2, cex.names = 0.7, space=2, xlab="Revenue", ylab = "Effective", names.arg=c("1:high","2:medium","3:low"), col = "#FF5566")
+
+```
+
+
+##  Indicateurs de tendance centrale
+
+
+Characterize a quantitative variable
+
+***Age***
+
+```{r}
+min(db_banque$age) 
+max(db_banque$age) 
+mean(db_banque$age)
+range(db_banque$age)
+median(db_banque$age) 
+```
+
+***Vintage in days***
+
+```{r}
+min(db_banque$vintage) 
+max(db_banque$vintage) 
+mean(db_banque$vintage) 
+range(db_banque$vintage) 
+median(db_banque$vintage)
+```
+
+#### Indicateurs de dispersion
+
+Les indicateurs de dispersion permettent de mesurer si les valeurs sont plutôt regroupées ou au contraire plutôt dispersées.
+
+```{r}
+indicateur_age <- max(db_banque$age) - min(db_banque$age)
+indicateur_age
+var(x = db_banque$age) # Variance
+sd(x = db_banque$age) # Ecart-type
+
+
+```
+Les indicateurs de dispersion les plus utilisés sont la variance ou, de manière équivalente, l’écarttype (qui est égal àla racine carrée de la variance).
+
+
+```{r}
+quantile(x = db_banque$age)
+
+
+quantile(x = db_banque$age, probs = 0.25) ## Premier quartile
+
+quantile(x = db_banque$age, probs = 0.75) ## Troisième quartile
+
+
+## Notons enfin que la fonction summary permet d’obtenir d’un coup plusieurs indicateurs classiques
+
+summary(object = db_banque$age)
+```
+
+#### Indicateur d'asymétrie et d'aplatissement
+
+##### Le coefficient d'asymétrie (skewness)
+
+Le fait qu’une distribution soit asymétrique désigne le fait que les observations sont réparties de manière inégale de part et d’autre du milieu de la distribution. L’indice statistique qui permet de rendre compte du niveau d’asymétrie est le coefficient d’asymétrie, ou skewness en anglais
+
+```{r}
+library(e1071)
+skewness(x = db_banque$age)
+
+```
+
+##### Le coefficient d'applatissement  (kurtosis)
+
+
+```{r}
+## install.packages("moments")
+library(moments)
+kurtosis(db_banque$age)
+
+# Calculons le skewness et le kurtosis pour une distribution normale :
+set.seed(101)
+x_norm <- rnorm(5000)
+hist(x_norm, prob = TRUE) 
+lines(density(x_norm), col = 2, lwd = 3) 
+```
+
+```{r}
+moments::kurtosis(x_norm)
+
+moments::skewness(x_norm)
+
+```
+
+## Analyse bivariée
+
+### Les femmes sont-elles moins susceptibles de résilier que les hommes ?
+
+```{r}
+data1 <- db_banque |> filter(db_banque$churn == 1) # les clients qui ont abandonnés les soldes inférieurs au solde minimum
+pie(table(data1$gender), col = c("chartreuse1","deeppink2","dodgerblue"))
+
+
+```
+
+### Les jeunes clients sont-ils plus susceptibles de se désabonner ?
+
+```{r}
+
+hist(table(data1$age), col = "#005599",
+ main = "Age des Clients",
+ xlab = "age",
+ ylab = "Nombre")
+
+```
+
+
+### Les clients à faible revenu sont-ils plus susceptibles de se désabonner ?
+
+```{r}
+barplot(height = table(data1$customer_nw_category), main = 'Les clients les plus susceptibles de se désabonner', las= 2, cex.names = 0.7, space=2, xlab="Revert", ylab = "Numbre", names.arg=c("1:high","2:medium","3:low"))
+
+
+```
+
+
+### Les clients ayant une ou plusieurs personnes à charge sont-ils moins susceptibles de résilier ?
+
+```{r}
+
+barplot(height = table(data1$dependents), main = 'Les clients ayant une ou plusieurs personnes à charge', las= 2, cex.names = 0.7, space=2, xlab="Nombdre de Personnes à charge", ylab = "Effectif", col="#FF00BB")
+```
+
+
+### Les clients dont la taille moyenne de la famille est inférieure à 4 sont plus susceptibles de résilier ?
+
+```{r}
+inferieur4<- data1 |> filter(dependents<4)
+inf4=sum(inferieur4$dependents)
+superieur4<- data1 |> filter(dependents>=4)
+sup4=sum(superieur4$dependents)
+y=c("Personne à charge < 4", "Personne à charge > 4")
+x=c(inf4,sup4)
+d=data.frame(x,y)
+pie(d$x,labels = d$y, col=c("yellow", "blue"))
+
+```
+
+
+### Les clients vintage sont-ils moins susceptibles de se désabonner ?
+
+```{r}
+
+barplot(height = table(data1$vintage), main = 'vintage customers', las= 2, cex.names = 0.7, space=2, xlab="days", ylab = "Number", col="blue")
+```
+
+
+### Les clients dont le solde moyen est plus élevé sont-ils moins susceptibles de se désabonner ?
+
+```{r}
+moyen_solde <- mean(data1$current_month_balance)
+d_sup_moy <- data1 |> filter(current_month_balance > moyen_solde) |> count()
+d_inf_moy <- data1|> filter(current_month_balance <= moyen_solde) |> count()
+y1=c("Solde moyen moins élevé", "solde moyen plus élevé ")
+x1=c(d_inf_moy,d_sup_moy)
+d2=tibble(x1,y1)
+pie(as.double(d2$x1),labels = d2$y1, col=c("gray", "yellow"), init.angle = 90)
+
+
+
+```
+
+### Les clients dont le solde mensuel diminue sont-ils plus susceptibles de se désabonner ?
+
+```{r}
+# New Variable variable percent_change_credits
+data_etat_sole_mensuel <- data1 |> select(average_monthly_balance_prevQ2,average_monthly_balance_prevQ) |>
+  mutate(percent_change_credits=average_monthly_balance_prevQ2-average_monthly_balance_prevQ)
+
+
+# classification 
+data_sup0 <- data_etat_sole_mensuel|> filter(percent_change_credits >0) |> count()
+data_inf0 <- data_etat_sole_mensuel|> filter(percent_change_credits <0) |> count()
+
+y2=c("the monthly balance increases", "the monthly balance decreases ")
+x2=c(data_sup0,data_inf0)
+d3=tibble(x2,y2)
+pie(as.double(d3$x2),labels = d3$y2, col=c("chartreuse", "deepskyblue"), init.angle = 90, main="Statement of the average balance of unsubscribed customers")
+```
+
+
+### Les clients n'ayant effectué aucune transaction au cours des trois derniers mois sont-ils plus susceptibles de se désabonner ?
+
+```{r}
+d1 <- read.csv("Banking_churn_prediction.csv", header=TRUE, stringsAsFactors=FALSE)
+
+transaction_3mois <- d1 |> filter(last_transaction != 'NaT') # DELETE last_transaction 'NaT'
+
+#  Adding new variable diff_last_transaction, containing the duration between le 01/01/2019 et last_transction.
+
+#install.packages("zoo")
+library(zoo)
+transaction_3mois <- transaction_3mois |> mutate(diff_last_transaction= 12* ((as.yearmon('2019-01-01'))-(as.yearmon(transaction_3mois$last_transaction))))
+
+hist(round(transaction_3mois$diff_last_transaction,2), main="Latest customer transactions", xlab="month", ylab="Numbers", col="yellow")
+
+```
+
+
+### Les clients ayant effectué des retraits importants au cours du dernier mois ont-ils plus de chances de se désabonner ?
+
+```{r}
+retrait_dernier_mois <- data1 |> mutate(retrait_mois_precedent=previous_month_end_balance-current_month_debit)
+hist(retrait_dernier_mois$retrait_mois_precedent, main="Customer withdrawals from the last month", xlab="withdrawals")
+```
+
+
+### Les clients ayant effectué des retraits importants au cours du dernier trimestre sont-ils plus susceptibles de se désabonner ?
+
+```{r}
+
+
+retrait_dernier_trimestre <- data1 |> mutate(trimestre=average_monthly_balance_prevQ2-average_monthly_balance_prevQ)
+
+retrait_sup_0 <- retrait_dernier_trimestre|> filter(trimestre >0) |> count()
+retrait_inf_0 <- retrait_dernier_trimestre|> filter(trimestre <0) |> count()
+
+y3=c("High Quarterly Withdrawal", "low Quarterly Withdrawal ")
+x3=c(retrait_sup_0,retrait_inf_0)
+d4=tibble(x3,y3)
+pie(as.double(d4$x3), main="Last quarter customer withdrawals", labels = d4$y3)
+```
+
+
+
+
+
