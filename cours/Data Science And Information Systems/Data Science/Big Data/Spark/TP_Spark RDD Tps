@@ -1,0 +1,311 @@
+vi !: gedit input.txt
+
+more input.txt\
+
+
+//////vous pouvez faire le traitement sur le fichier purchases.txt, par exemple
+
+
+
+
+----------------------------------------------------
+people are not as beautiful as they look,
+as they walk or as they talk.
+they are only as beautiful as they love,
+as they care as they share.
+and they are good for me.
+-------------------------------------------------------
+then use the file: purchases.txt in this exercice
+////////////////////////////////////////////////////////////////////
+[cloudera@quickstart ~]$ hdfs dfs -put input.txt
+
+[cloudera@quickstart ~]$ hdfs dfs -ls
+
+spark-shell
+
+scala> val  inputfile = sc.textFile("input.txt")
+
+Found 1 items
+-rw-r--r--   1 cloudera cloudera        167 2019-09-22 12:48 input.txt
+
+/////////////////////////////////////////////////////////////////////
+
+scala> val inputfile = sc.textFile("input.txt")
+
+
+inputfile: org.apache.spark.rdd.RDD[String] = input.txt MapPartitionsRDD[17] at textFile at <console>:27
+
+scala> inputfile.count()
+res6: Long = 5
+
+scala> inputfile.first()
+res7: String = people are not as beautiful as they look,
+
+scala> 
+
+
+/////////////////////////////////////////////////////////////////
+Charger le fichier text input.txt par spark context  ( Spark context available as sc (master = local[*], app id = local-1527160197590)).
+
+Spark cr2er un RDD constiutue de chaines de caracteres
+
+Un RDD est un objet et a un objet je peut appliauer des methodes
+
+
+donc je peut faire :
+
+scala> inputfile.count()
+
+pour savoir combien j'ai de RDDs -->      res2: Long = 5     donc 5 Rdds 5 dataframes
+
+
+
+pour savoir qu il est la premiere ligne    
+
+scala> inputfile.first()
+res3: String = people are not as beautiful as they look,
+
+tester  
+
+scala> inputfile.take(1)
+scala> inputfile.take(2)
+scala> inputfile.take(3)
+scala> inputfile.take(4)
+
+
+scala> inputfile.collect()
+
+on voit que c4est un tableau de chaines de characteres
+
+
+
+II
+
+appliquer des operateurs scala
+
+Transformations : elle prennent un ou deux RDds en entreer et donnent un RDD en sortie
+
+filtre par exemple
+ selectionner les documents aui contient le mot beautiful
+
+
+scala> val beautiful = inputfile.filter(line => line.contains("beautiful"))
+
+beautiful: org.apache.spark.rdd.RDD[String] = MapPartitionsRDD[2] at filter at <console>:29
+
+scala> beautiful.count()
+
+res4: Long = 2
+
+
+
+mnt .
+
+scala> inputfile.filter(line => line.contains("are")).count
+res7: Long = 4
+
+compteur de combien de termes dans la collection
+
+scala> val termes = inputfile.flatMap(line => line.split(" "))
+
+
+scala> termes.count()
+
+
+
+Nbre d'occurences :
+
+scala> termes.collect()
+
+scala> val termesUnit = termes.map (word => (word,1))
+scala> termesUnit.collect()
+
+
+Reduce = Phase d'agregation des pairs cle, valeur
+
+
+scala> val compTermes = termesUnit.reduceByKey((a,b) => a+b)
+
+
+
+sauvegarder le resultat de mom  compTermes.collect()
+
+
+compTermes.collect()
+res15: Array[(String, Int)] = Array((talk.,1), (are,3), (not,1), (people,1), (share.,1), (or,1), (only,1), (as,8), (care,1), (good,1), (for,1), (they,8), (beautiful,2), (walk,1), (and,1), (me.,1), (love,,1), (look,,1))
+
+
+pour sauvegarder mon RDD :
+
+
+compTermes.persist()
+
+
+
+
+IV jetert un oeil sur l'interface de spark
+
+localhost:4040
+
+
+
+
+
+
+-------------------------------
+---------------------------------
+----------------------------------Version en anglais 
+--------------------------------_
+_____________________________________
+--------------------------------------------
+
+vi input.txt
+
+more input.txt\
+
+
+//////you can do the processing on the purchases.txt file, for example
+
+
+
+
+-------------------------------------------------- --
+people are not as beautiful as they look,
+as they walk or as they talk.
+they are only as beautiful as they love,
+as they care as they share.
+and they are good for me.
+-------------------------------------------------- -----
+then use the file: purchases.txt in this exercise
+///////////////////////////////////////////////// //////////////////
+[cloudera@quickstart ~]$ hdfs dfs -put input.txt
+
+[cloudera@quickstart ~]$ hdfs dfs -ls
+
+spark shell
+
+scala > val inputfile = sc.textFile("input.txt")
+
+Found 1 items
+-rw-r--r-- 1 cloudera cloudera 167 2019-09-22 12:48 input.txt
+
+///////////////////////////////////////////////// ///////////////////
+
+scala > val inputfile = sc.textFile("input.txt")
+
+
+inputfile: org.apache.spark.rdd.RDD[String] = input.txt MapPartitionsRDD[17] at textFile at <console>:27
+
+scala>inputfile.count()
+res6:Long=5
+
+scala> inputfile.first()
+res7: String = people are not as beautiful as they look,
+
+scale>
+
+
+///////////////////////////////////////////////// ///////////////
+Load text input.txt file by spark context ( Spark context available as sc (master=local[*], app id=local-1527160197590)).
+
+Spark create an RDD consisting of character strings
+
+An RDD is an object and to an object I can apply methods
+
+
+so I can do:
+
+scala>inputfile.count()
+
+to know how many RDDs I have --> res2: Long = 5 so 5 Rdds 5 dataframes
+
+
+
+to know that he is the first line
+
+scala> inputfile.first()
+res3: String = people are not as beautiful as they look,
+
+test
+
+scala> inputfile.take(1)
+scala> inputfile.take(2)
+scala> inputfile.take(3)
+scala> inputfile.take(4)
+
+
+scala>inputfile.collect()
+
+we see that it is an array of character strings
+
+
+
+II
+
+apply scala operators
+
+Transformations: they take one or two RDds as input and give an RDD as output
+
+filter for example
+ select documents that contain the word beautiful
+
+
+scala> val beautiful = inputfile.filter(line => line.contains("beautiful"))
+
+beautiful: org.apache.spark.rdd.RDD[String] = MapPartitionsRDD[2] at filter at <console>:29
+
+scala>beautiful.count()
+
+res4: Long=2
+
+
+
+mnt .
+
+scala> inputfile.filter(line => line.contains("are")).count
+res7: Long=4
+
+counter of how many terms in the collection
+
+scala > val terms = inputfile.flatMap(line => line.split(" "))
+
+
+scala> terms.count()
+
+
+
+Number of occurrences:
+
+scala> terms.collect()
+
+scala > val termsUnit = terms.map (word => (word,1))
+scala> termsUnit.collect()
+
+
+Reduce = Key peer aggregation phase, value
+
+
+scala> val compTerms = termsUnit.reduceByKey((a,b) => a+b)
+
+
+
+save the result of mom compTerms.collect()
+
+
+compTerms.collect()
+res15: Array[(String, Int)] = Array((talk.,1), (are,3), (not,1), (people,1), (share.,1), (or,1) , (only,1), (as,8), (care,1), (good,1), (for,1), (they,8), (beautiful,2), (walk,1), ( and,1), (me.,1), (love,,1), (look,,1))
+
+
+to save my RDD:
+
+
+compTerms.persist()
+
+
+
+
+IV take a look at the interface of spark
+
+localhost:4040
+
+
