@@ -77,6 +77,7 @@ Le Master en Traitement Intelligent des Systèmes est un programme spécialisé 
 - **M14**: Mobile Cloud Computing & VNF
 - **M15**: IoT & Mobile Edge Computing (5G)
 - **M16**: Systèmes Intelligents & Deep Learning
+- **M17**: [Virtualization](https://github.com/zelhajou/UM5-Master-IPS/tree/main/cours/Virtualization)
 - **M17**: Management Stratégique
 
 **S4**:
