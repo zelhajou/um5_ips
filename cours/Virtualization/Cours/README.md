@@ -90,5 +90,68 @@ La virtualisation est un ensemble de techniques matérielles et logicielles qui 
 
 Les serveurs de bases de données (Oracle, MySQL), les serveurs d’applications (WebSphere, WebLogic, Tomcat) et les serveurs réseau (DNS, DHCP, NTP) sont souvent virtualisés. Il n’y a pas de restriction quant aux systèmes d’exploitation utilisés (Windows, Linux, Solaris, etc.).
 
+**Consolidation**
+
+- **Sans Virtualisation**: Un seul système est opérationnel par machine physique, augmentant le risque d’interruption de service global.
+- **Avec Virtualisation**: Chaque VM possède ses propres applications et OS, permettant d’exécuter plusieurs systèmes sur une même machine physique.
+
+**Objectif**: Optimiser le taux d’utilisation des serveurs.
+
+**Serveur Virtuel**
+
+Les serveurs virtuels offrent compatibilité, isolation, encapsulation et indépendance matérielle. Ils fonctionnent exactement comme des ordinateurs physiques, avec leur propre CPU virtuel, RAM, disque dur et carte réseau.
+
+**Avantages**:
+
+- **Compatibilité**: Avec tous les standards x86 et autres.
+- **Isolation**: Des autres machines comme si elles étaient physiques.
+- **Encapsulage**: Environnement informatique complet encapsulé.
+- **Indépendance matérielle**: Fonctionnement indépendant du matériel.
+
+**Définition de la Virtualisation**
+
+La virtualisation permet de faire fonctionner plusieurs OS et applications sur une seule machine physique en les séparant les uns des autres. L’hôte voit ses machines virtuelles comme des applications auxquelles il distribue ses ressources.
+
+**Usages de la Virtualisation**
+
+1. **Mutualisation des ressources**: Regroupement de systèmes divers sur une machine physique unique.
+2. **Exécution simultanée de plusieurs OS**: Meilleure que le multiboot.
+3. **Essai de systèmes avant mise en exploitation**: Possibilité de recommencer sans affecter l’OS hôte.
+4. **Évolutivité**: Simplification de la configuration et ajout de serveurs d’applications.
+
+**Pourquoi la Virtualisation?**
+
+1. **Optimisation des ressources**: Utilisation maximale de la capacité du matériel physique.
+2. **Flexibilité**: Assignation souple des serveurs à différents usages.
+3. **Consolidation**: Réduction des coûts d’énergie, de refroidissement et de maintenance.
+4. **Émulation**: Simulation du fonctionnement de n’importe quel ordinateur sur un autre.
+5. **Isolation**: Exécution indépendante des VMs.
+6. **Sécurisation**: Réduction des risques d’attaques et de compromission des machines.
+
+**Bénéfices Économiques**
+
+La virtualisation permet une réduction significative des coûts d’exploitation, notamment en termes d’énergie, de refroidissement, d’immobilier, et de matériel informatique.
+
+**Exemple Économique**:
+
+- Une banque suisse a réduit de 166 serveurs physiques Windows à 9 serveurs VMware ESX, diminuant ainsi les coûts énergétiques, les émissions de CO₂ et la facture électrique.
+
+**Facilité d’Administration**
+
+1. **Installation et déploiement aisés**: Migration des VMs entre serveurs physiques sans interruption de service.
+2. **Gestion centralisée**: Cloisonnement des systèmes d’exploitation et optimisation de l’infrastructure.
+
+**Risques**
+
+1. **Décloisonnement et déni de service**: Impact sur la performance et disponibilité des VMs.
+2. **Gestion**: Prolifération des VMs et problèmes d’infrastructure.
+3. **Stockage**: Concentration des données et performances I/O.
+4. **Ecosystème**: Impact potentiel sur de nombreux services métiers en cas d’incident.
+
+**Conclusion**
+
+La virtualisation est une technologie essentielle pour l’optimisation des ressources, la réduction des coûts et l’amélioration de la gestion et de la sécurité des systèmes informatiques. Elle offre de nombreux avantages tout en présentant des risques qu’il convient de gérer efficacement.
+
+
 
 
