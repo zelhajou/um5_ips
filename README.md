@@ -108,55 +108,42 @@ Le mémoire de fin d'études est disponible [ici](#).
 
 Les outils et technologies utilisés au cours du Master sont les suivants:
 
+```bash
+Langages_de_Programmation/
+├── Python/            # Langage principal pour la Data Science et le Machine Learning.
+├── SQL/               # Utilisé pour la gestion des bases de données relationnelles.
+Frameworks_et_Bibliothèques/
+├── TensorFlow/        # Outil de Deep Learning pour la reconnaissance d'images et le NLP.
+├── Scikit-learn/      # Bibliothèque pour les projets de Machine Learning.
+├── Keras/             # Framework de haut niveau pour le Deep Learning.
+├── Pandas/            # Outil pour la manipulation et l'analyse des données.
+└── NumPy/             # Bibliothèque pour les calculs scientifiques et matriciels.
+Bases_de_Données/
+├── MySQL/             # Gestion des bases de données relationnelles.
+├── MongoDB/           # Base de données NoSQL pour une flexibilité de schéma.
+└── Oracle/            # Solutions robustes et scalables pour les bases de données.
+Environnements_de_Développement_Intégré/
+├── Jupyter_Notebook/   # IDE pour l'analyse de données et le prototypage.
+├── PyCharm/            # IDE pour le développement Python à grande échelle.
+└── Visual_Studio_Code/  # Éditeur de code pour le développement Web et Python.
+Outils_de_Cloud_Computing/
+├── Google_Cloud_Platform/ # Plateforme pour l'entraînement de modèles sur le cloud.
+└── Amazon_Web_Services/   # Déploiement de modèles en production sur le cloud.
+Outils_de_Gestion_de_Versions/
+└── Git/               # Outil de gestion de versions pour le code source.
+Outils_de_Visualisation_de_Données/
+├── Matplotlib/        # Bibliothèque pour la visualisation des données en Python.
+├── Seaborn/          # Outil pour des visualisations statistiques avancées.
+├── Plotly/           # Outil pour des visualisations interactives.
+└── Tableau/          # Logiciel pour la création de dashboards interactifs.
+Systèmes_d_Exploitation/
+├── Linux/            # Système d'exploitation pour le développement de Machine Learning.
+└── Windows/          # Utilisé pour le développement Web et logiciels spécifiques.
+
+```
+
 [![My Skills](https://skillicons.dev/icons?i=python,tensorflow,scikitlearn,mysql,mongo,pycharm,vscode,latex,gcp,aws,git,linux,windows,docker)](https://skillicons.dev)
 
-
-**Langages de Programmation:**
-- **Python:** Utilisé pour la plupart des projets de Data Science, Machine Learning, et Deep Learning.
-- **SQL:** Employé pour la gestion et l'interrogation des bases de données relationnelles.
-
-**Frameworks et Bibliothèques:**
-
-- **TensorFlow**: Utilisé pour les projets de Deep Learning, notamment dans le cadre de la reconnaissance d'images et du traitement du langage naturel.
-- **Scikit-learn**: Principalement utilisé pour les projets de Machine Learning.
-- **Keras**: Framework de haut niveau pour le Deep Learning, utilisé en conjonction avec TensorFlow.
-- **Pandas**: Utilisé pour la manipulation et l'analyse des données.
-- **NumPy**: Utilisé pour les calculs scientifiques et les opérations sur les matrices.
-
-**Bases de Données:**
-
-- **MySQL**: Utilisé pour la gestion des bases de données relationnelles.
-- **MongoDB**: Utilisé pour les bases de données NoSQL, particulièrement pour les projets nécessitant une flexibilité de schéma.
-- **Oracle**: Utilisé dans les projets nécessitant des bases de données robustes et scalables.
-
-**Environnements de Développement Intégré (IDE)**
-- **Jupyter Notebook**: Utilisé pour l'analyse de données, la visualisation, et l'expérimentation avec les modèles de Machine Learning et de Deep Learning.
-- **PyCharm**: Utilisé pour le développement de projets Python de grande envergure.
-- **Visual Studio Code**: Utilisé pour le développement de projets Web et pour l'écriture de scripts Python.
-
-**Outils de Cloud Computing**
-- **Google Cloud Platform (GCP)**: Utilisé pour l'entraînement de modèles de Deep Learning sur des machines virtuelles de haute performance.
-- **Amazon Web Services (AWS)**: Utilisé pour le déploiement de modèles de Machine Learning et de Deep Learning en production.
-
-**Outils de Gestion de Versions**
-- **Git**: Utilisé pour la gestion des versions du code source et la collaboration avec d'autres développeurs.
-
-**Outils de Visualisation de Données**
-- **Matplotlib**: Utilisé pour la visualisation des données en Python.
-- **Seaborn**: Utilisé pour des visualisations statistiques plus avancées
-- **Plotly**: Utilisé pour la visualisation interactive de données.
-- **Tableau**: Utilisé pour la création de dashboards interactifs et la visualisation des données.s.
-
-**Systèmes d'Exploitation**
-- **Linux**: Utilisé comme système d'exploitation principal pour le développement de projets de Machine Learning et de Deep Learning.
-- **Windows**: Utilisé pour le développement de projets Web et pour l'utilisation de logiciels spécifiques à Windows.
-
-<!-- **Autres Outils**
-- **Docker**: Utilisé pour la conteneurisation des applications et la gestion des environnements de développement.
-- **Kubernetes**: Utilisé pour l'orchestration des conteneurs et le déploiement d'applications à grande échelle.
-- **Apache Kafka**: Utilisé pour la gestion des flux de données en temps réel.
-- **Apache Spark**: Utilisé pour le traitement des données massives et la mise en œuvre de pipelines de données.
- -->
 
 ## Contact Information
 Pour toute question ou collaboration, vous pouvez me contacter via zelhajou@gmail.com.
