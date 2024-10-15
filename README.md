@@ -111,31 +111,38 @@ Les outils et technologies utilisés au cours du Master sont les suivants:
 ```bash
 Langages_de_Programmation/
 ├── Python/            # Langage principal pour la Data Science et le Machine Learning.
-├── SQL/               # Utilisé pour la gestion des bases de données relationnelles.
+└── SQL/               # Utilisé pour la gestion des bases de données relationnelles.
+│
 Frameworks_et_Bibliothèques/
 ├── TensorFlow/        # Outil de Deep Learning pour la reconnaissance d'images et le NLP.
 ├── Scikit-learn/      # Bibliothèque pour les projets de Machine Learning.
 ├── Keras/             # Framework de haut niveau pour le Deep Learning.
 ├── Pandas/            # Outil pour la manipulation et l'analyse des données.
 └── NumPy/             # Bibliothèque pour les calculs scientifiques et matriciels.
+│
 Bases_de_Données/
 ├── MySQL/             # Gestion des bases de données relationnelles.
 ├── MongoDB/           # Base de données NoSQL pour une flexibilité de schéma.
 └── Oracle/            # Solutions robustes et scalables pour les bases de données.
+│
 Environnements_de_Développement_Intégré/
 ├── Jupyter_Notebook/   # IDE pour l'analyse de données et le prototypage.
 ├── PyCharm/            # IDE pour le développement Python à grande échelle.
 └── Visual_Studio_Code/  # Éditeur de code pour le développement Web et Python.
+│
 Outils_de_Cloud_Computing/
 ├── Google_Cloud_Platform/ # Plateforme pour l'entraînement de modèles sur le cloud.
 └── Amazon_Web_Services/   # Déploiement de modèles en production sur le cloud.
+│
 Outils_de_Gestion_de_Versions/
 └── Git/               # Outil de gestion de versions pour le code source.
+│
 Outils_de_Visualisation_de_Données/
 ├── Matplotlib/        # Bibliothèque pour la visualisation des données en Python.
 ├── Seaborn/          # Outil pour des visualisations statistiques avancées.
 ├── Plotly/           # Outil pour des visualisations interactives.
 └── Tableau/          # Logiciel pour la création de dashboards interactifs.
+│
 Systèmes_d_Exploitation/
 ├── Linux/            # Système d'exploitation pour le développement de Machine Learning.
 └── Windows/          # Utilisé pour le développement Web et logiciels spécifiques.
