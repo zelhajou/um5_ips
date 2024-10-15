@@ -121,8 +121,6 @@ Frameworks_et_Bibliothèques/
 └── NumPy/             # Bibliothèque pour les calculs scientifiques et matriciels.
 │
 Bases_de_Données/
-├── MySQL/             # Gestion des bases de données relationnelles.
-├── MongoDB/           # Base de données NoSQL pour une flexibilité de schéma.
 └── Oracle/            # Solutions robustes et scalables pour les bases de données.
 │
 Environnements_de_Développement_Intégré/
@@ -142,10 +140,6 @@ Outils_de_Visualisation_de_Données/
 ├── Seaborn/          # Outil pour des visualisations statistiques avancées.
 ├── Plotly/           # Outil pour des visualisations interactives.
 └── Tableau/          # Logiciel pour la création de dashboards interactifs.
-│
-Systèmes_d_Exploitation/
-├── Linux/            # Système d'exploitation pour le développement de Machine Learning.
-└── Windows/          # Utilisé pour le développement Web et logiciels spécifiques.
 
 ```
 
