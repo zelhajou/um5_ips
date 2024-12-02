@@ -97,8 +97,8 @@ Le Master en Traitement Intelligent des Systèmes est un programme spécialisé 
 ## Projets
 
 Les projets réalisés dans le cadre du Master sont les suivants:
-- [Projet 1: Analyse de Sentiments](#)
-- [Projet 2: Reconnaissance de Visages](#)
+- [brain_tumor_detection ](#)
+
 
 ## Mémoire
 
